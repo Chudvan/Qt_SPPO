@@ -21,14 +21,14 @@ class ConfigurationDialog : public QDialog
 
 public:
     explicit ConfigurationDialog(QWidget *parent = nullptr);
-    ~ConfigurationDialog();
+    ~ConfigurationDialog() override;
 
     QString imageFilePath();
     QSize puzzleSize();
 
 private slots:
     void on_browse_button_clicked();
-    void accept();
+    void accept() override;
 
 private:
     Ui::ConfigurationDialog *ui;

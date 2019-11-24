@@ -40,7 +40,7 @@ void GameLogic::setup(const QSize &size, const QPixmap &pix){
             piece->setFlag(QGraphicsItem::ItemIsMovable);
             piece->setFlag(QGraphicsItem::ItemSendsGeometryChanges);
             double x_rand = size.width() * p_size * (double)qrand() / RAND_MAX;
-            double y_rand = size.width() * p_size * (double)qrand() / RAND_MAX;
+            double y_rand = size.height() * p_size * (double)qrand() / RAND_MAX;
             piece->setPos(x_rand, y_rand); // put the piece in place
             piece->setNumber(size);
 

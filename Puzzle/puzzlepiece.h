@@ -25,9 +25,9 @@ public:
     void setCoordinates(QPoint);
     void link(PuzzlePiece*, Direction);
     void checkNeighbours(QSet<QPoint> &);
-    void findneighbour(Direction direction);
+    void findneighbour(Direction);
     void setNumber(const QSize &);
-    QVariant itemChange(GraphicsItemChange, const QVariant &);
+    QVariant itemChange(GraphicsItemChange, const QVariant &) override;
 private:
     int p_size;
     int number;
@@ -39,8 +39,8 @@ private:
     void constructShape(QPainterPath &);
     void paint(QPainter *painter,
               const QStyleOptionGraphicsItem *option,
-              QWidget *widget = nullptr);
-    void mouseReleaseEvent(QGraphicsSceneMouseEvent*);
+              QWidget *widget = nullptr) override;
+    void mouseReleaseEvent(QGraphicsSceneMouseEvent*) override;
 };
 
 #endif // PUZZLEPIECE_H

@@ -131,12 +131,12 @@ void PuzzlePiece::setPixmap(QPixmap &p){
 }
 
 void PuzzlePiece::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget){
-    painter->setClipPath(path());
     painter->setPen(QPen(Qt::black, 1));
-    QRect rect = boundingRect().toRect();
-    painter->drawPixmap(rect.x(), rect.y(), pixmap());
     painter->setRenderHint(QPainter::Antialiasing);
     painter->drawPath(path());
+    painter->setClipPath(path());
+    QRect rect = boundingRect().toRect();
+    painter->drawPixmap(rect.x(), rect.y(), pixmap());
 }
 
 QPoint PuzzlePiece::coordinates(){

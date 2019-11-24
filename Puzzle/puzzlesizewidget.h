@@ -13,7 +13,7 @@ class PuzzleSizeWidget : public QFrame
     Q_PROPERTY(QPixmap pixmap READ pixmap WRITE setPixmap)
 public:
     explicit PuzzleSizeWidget(QWidget *parent = 0);
-    QSize sizeHint() const;
+    QSize sizeHint() const override;
     QSize value() const;
     QSize minimum() const;
     QSize maximum() const;
@@ -38,8 +38,8 @@ private:
     void renderValue(QPainter&);
     void renderGrid(QPainter&);
     QSize cellAt(QPoint);
-    void mousePressEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
 };
 
 #endif // PUZZLESIZEWIDGET_H
